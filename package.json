@@ -1,0 +1,46 @@
+{
+  "name": "Kode",
+  "version": "1.0.0",
+  "description": "Simple code editor",
+  "main": "main.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mhtahsan/ide.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "build": {
+    "appId": "Kode",
+    "win": {
+      "publish":{
+        "provider": "github",
+        "repo": "demo",
+        "owner": "mhtahsan"
+      },
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon2.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "icon2.ico",
+      "uninstallerIcon": "icon2.ico",
+      "uninstallDisplayName": "Kode",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "author": "Mahmudul Hasan Tahsan",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.5",
+    "electron-builder": "^23.1.0"
+  },
+  "dependencies": {
+    "electron-updater": "^5.0.5"
+  }
+}
